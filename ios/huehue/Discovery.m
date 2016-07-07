@@ -26,6 +26,12 @@ RCT_EXPORT_MODULE()
   return self;
 }
 
+- (void)setBridge:(RCTBridge *)bridge {
+  [super setBridge:bridge];
+
+  [self startObserving];
+}
+
 - (NSArray<NSString *> *)supportedEvents {
   NSArray *arr = @[@"found"];
   return arr;

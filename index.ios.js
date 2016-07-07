@@ -14,13 +14,22 @@ import {
 } from 'react-native';
 
 const Discovery = NativeModules.Discovery;
-Discovery.hallo('hey');
 
-Discovery.addListener('found', (e) => {
-	console.log('found', e)
-});
+Discovery.hallo('hey')
+Discovery.addListener('found')
 
 class huehue extends Component {
+
+	componentWillMount(){
+
+	}
+
+	constructor(props) {
+		super(props)
+
+		this.state = {}
+	}
+
   render() {
     return (
       <View style={styles.container}>
