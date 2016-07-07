@@ -13,10 +13,10 @@ import {
   NativeModules
 } from 'react-native';
 
-var CalendarManager = NativeModules.Discovery;
+const Discovery = NativeModules.Discovery;
+Discovery.hallo('hey');
 
 class huehue extends Component {
-
   render() {
     return (
       <View style={styles.container}>

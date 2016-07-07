@@ -7,8 +7,6 @@
 //
 
 #import "Discovery.h"
-#import "RCTBridge.h"
-#import "RCTBridgeDelegate.h"
 #import "RCTEventEmitter.h"
 
 @implementation Discovery
@@ -79,6 +77,19 @@ RCT_EXPORT_MODULE()
   NSLog(@"Found peripheral -> %@\nwith data -> %@\nwith RSSI -> %@", peripheral, advertisementData, RSSI);
   
   [self sendEventWithName:@"found" body:advertisementData];
+}
+
+- (void)startObserving {
+  NSLog(@"started observing");
+}
+
+- (void)stopObserving {
+  NSLog(@"stopped observing");
+}
+
+RCT_EXPORT_METHOD(hallo:(NSString *)message)
+{
+  NSLog(@"%@", message);
 }
 
 @end
