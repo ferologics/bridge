@@ -16,6 +16,10 @@ import {
 const Discovery = NativeModules.Discovery;
 Discovery.hallo('hey');
 
+Discovery.addListener('found', (e) => {
+	console.log('found', e)
+});
+
 class huehue extends Component {
   render() {
     return (
