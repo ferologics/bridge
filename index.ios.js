@@ -9,10 +9,14 @@ import {
   AppRegistry,
   StyleSheet,
   Text,
-  View
+  View,
+  NativeModules
 } from 'react-native';
 
+var CalendarManager = NativeModules.Discovery;
+
 class huehue extends Component {
+
   render() {
     return (
       <View style={styles.container}>

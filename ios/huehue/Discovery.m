@@ -13,24 +13,19 @@
 
 @implementation Discovery
 
-RCT_EXPORT_MODULE();
+RCT_EXPORT_MODULE()
 
 - (instancetype)init {
+  
   self = [super init];
   
-  self.UUID = @"0xBABE";
-  self.blueToothReady = false;
-//  RCTBridge *brg = [self.bridge initWithDelegate:self launchOptions:nil];
-//  self.bridge = brg;
-  self.central = [[CBCentralManager alloc] initWithDelegate:self queue:nil];
+  if (self != nil) {
+    self.UUID = @"0xBABE";
+    self.blueToothReady = false;
+    self.central = [[CBCentralManager alloc] initWithDelegate:self queue:nil];
+  }
   
   return self;
-}
-
-- (NSURL *)sourceURLForBridge:(RCTBridge *)bridge {
-  
-  NSURL *source = [NSURL URLWithString:@"http://10.188.201.120:8081/index.ios.bundle?platform=ios&dev=true"];
-  return source;
 }
 
 - (NSArray<NSString *> *)supportedEvents {

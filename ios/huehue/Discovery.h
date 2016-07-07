@@ -9,11 +9,12 @@
 #import "RCTEventEmitter.h"
 #import <CoreBluetooth/CoreBluetooth.h>
 
-@interface Discovery : RCTEventEmitter<CBCentralManagerDelegate, RCTBridgeDelegate, RCTBridgeModule>
+@interface Discovery : RCTEventEmitter<CBCentralManagerDelegate>
 
 @property BOOL blueToothReady;
 @property (nonatomic, strong) NSString *UUID;
 @property (nonatomic, strong) CBCentralManager *central;
-//@property (nonatomic, strong) RCTBridge *bridge;
+
+- (instancetype)init;
 
 @end
