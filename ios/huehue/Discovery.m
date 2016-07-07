@@ -27,8 +27,9 @@ RCT_EXPORT_MODULE()
 }
 
 - (void)setBridge:(RCTBridge *)bridge {
-  [super setBridge:bridge];
-
+  NSLog(@"%@", super.bridge);
+  [super setBridge: bridge];
+  NSLog(@"%@", super.bridge);
   [self startObserving];
 }
 
